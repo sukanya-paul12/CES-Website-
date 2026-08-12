@@ -28,15 +28,15 @@ const Hero = () => {
             </button>
           </Link>
         </div>
+
+        {/* Animated Scroll Down Indicator */}
+        <Link to='about' smooth={true} offset={-150} duration={500} className="hero-scroll-indicator" aria-label="Scroll Down">
+          <div className="scroll-mouse">
+            <div className="scroll-wheel"></div>
+          </div>
+          <span className="scroll-text">SCROLL DOWN</span>
+        </Link>
       </div>
-      
-      {/* Animated Scroll Down Indicator */}
-      <Link to='about' smooth={true} offset={-150} duration={500} className="hero-scroll-indicator" aria-label="Scroll Down">
-        <div className="scroll-mouse">
-          <div className="scroll-wheel"></div>
-        </div>
-        <span className="scroll-text">SCROLL DOWN</span>
-      </Link>
     </div>
   )
 }
