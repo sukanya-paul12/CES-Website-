@@ -6,6 +6,7 @@ import ScrollToTop from './Components/ScrollToTop'
 import Home from './Components/Pages/Home/Home'
 import Gallery from './Components/Pages/Gallery/Gallery'
 import AnnouncementsPage from './Components/Pages/Announcements/AnnouncementsPage'
+import MerchandisePage from './Components/Pages/Merchandise/MerchandisePage'
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/team" element={<Home scrollTo="team" />} />
           <Route path="/announcements" element={<AnnouncementsPage />} />
+          <Route path="/merchandise" element={<MerchandisePage />} />
         </Routes>
         <Footer />
       </div>

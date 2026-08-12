@@ -30,8 +30,8 @@ const footerData = [
     },
     {
         title: "Phone",
-        text: "+91 9836923015",
-        name: "(Swapnil Ghosh)",
+        text: "+91 8004634929",
+        name: "(Kartikey Shukla)",
         icon: <MdLocalPhone className="footer_detail-icon" />,
     },
     {
@@ -81,6 +81,9 @@ export default function footer() {
                         </li>
                         <li className="footer_link">
                             <Link to="/gallery">Gallery</Link>
+                        </li>
+                        <li className="footer_link">
+                            <Link to="/merchandise">Merchandise</Link>
                         </li>
                         <li className="footer_link">
                             <Link to="/team">Team</Link>

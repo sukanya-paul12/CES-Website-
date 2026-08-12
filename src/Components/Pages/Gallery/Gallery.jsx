@@ -7,20 +7,20 @@ import heroImg from '../../../assets/hero.png';
 import aboutImg from '../../../assets/about.png';
 import program1 from '../../../assets/program-1.png';
 import program2 from '../../../assets/program-2.png';
-import program3 from '../../../assets/program-3.png';
 import collegeVideo from '../../../assets/college-video.mp4';
 import nitdgpVideo from '../../../assets/nitdgp-video_gW7ApmeU.mp4';
 import expertTalks from '../../../assets/15AugExpertTalks.png';
 import intersection from '../../../assets/h1-2intersection.jpg';
 import freshers25team from '../../../assets/freshersteam25.jpeg';
-import freshers24team from '../../../assets/freshers24.jpeg';
-import orientation24 from '../../../assets/orientation24.jpeg';
+import utkarshBhawan from '../../../assets/utkarsh-bhawan.jpg';
+import farewell from '../../../assets/farewell.jpg';
 
 const Gallery = () => {
   const [activeTab, setActiveTab] = useState('all');
   const [lightbox, setLightbox] = useState({ isOpen: false, item: null });
 
   const galleryItems = [
+    { id: 15, type: 'image', src: utkarshBhawan, title: 'Utkarsh Bhawan', category: 'campus' },
     { id: 2, type: 'image', src: gallery2, title: 'Campus View 2', category: 'campus' },
     { id: 3, type: 'image', src: gallery3, title: 'Campus View 3', category: 'campus' },
     { id: 4, type: 'image', src: gallery4, title: 'Campus View 4', category: 'campus' },
@@ -28,14 +28,11 @@ const Gallery = () => {
     { id: 6, type: 'image', src: heroImg, title: 'NIT Durgapur', category: 'campus' },
     { id: 7, type: 'image', src: aboutImg, title: 'Campus Life', category: 'campus' },
     { id: 8, type: 'image', src: freshers25team, title: '2025 Team', category: 'events' },
-    { id: 9, type: 'image', src: orientation24, title: 'Orientation\'24', category: 'events' },
-    { id: 10, type: 'image', src: freshers24team, title: '2024 Freshers Team', category: 'events' },
-    { id: 11, type: 'image', src: program1, title: 'Technical Workshop', category: 'events' },
-    { id: 12, type: 'image', src: program2, title: 'Engineering Seminar', category: 'events' },
-    { id: 13, type: 'image', src: program3, title: 'Civil Engineering Event', category: 'events' },
-    { id: 14, type: 'video', src: collegeVideo, thumbnail: gallery2, title: 'Campus Tour', category: 'videos' },
-    { id: 15, type: 'video', src: nitdgpVideo, thumbnail: gallery3, title: 'NIT Durgapur Overview', category: 'videos' },
-    { id: 16, type: 'image', src: expertTalks, title: 'Expert Talks with Asmit Roy Burman', category: 'events' },
+    { id: 9, type: 'image', src: farewell, title: 'Farewell Ceremony', category: 'events' },
+    { id: 11, type: 'image', src: program1, title: 'Engineering Seminar', category: 'events' },
+    { id: 12, type: 'image', src: program2, title: 'Civil Engineering Event', category: 'events' },
+    { id: 13, type: 'video', src: collegeVideo, thumbnail: gallery2, title: 'Campus Tour', category: 'videos' },
+    { id: 14, type: 'video', src: nitdgpVideo, thumbnail: gallery3, title: 'NIT Durgapur Overview', category: 'videos' },
   ];
 
   const categories = ['all', 'campus', 'events', 'videos'];

@@ -36,7 +36,7 @@ const Navbar = () => {
     <>
     <nav className={`container ${sticky? 'dark-nav' : ''}`}>
       <RouterLink to="/" onClick={closeMenu}>
-        <img src={logo2} alt="CES Logo" className={`logo${sticky || isTeamPage ? ' logo-small' : ''}`} />
+        <img src={logo2} alt="CES Logo" className={`logo${sticky || !isHomePage ? ' logo-small' : ''}`} />
       </RouterLink>
       <ul className='desktop-menu'>
         <li onClick={() => {
@@ -67,6 +67,17 @@ const Navbar = () => {
           <RouterLink to="/gallery">
             <h3>GALLERY</h3>
           </RouterLink>
+        </li>
+        <li onClick={closeMenu}>
+          {isHomePage ? (
+            <ScrollLink to='merchandise-section' smooth={true} offset={-80} duration={500}>
+              <h3>MERCHANDISE</h3>
+            </ScrollLink>
+          ) : (
+            <RouterLink to="/merchandise">
+              <h3>MERCHANDISE</h3>
+            </RouterLink>
+          )}
         </li>
         <li onClick={closeMenu}>
           {isHomePage ? (
@@ -111,6 +122,17 @@ const Navbar = () => {
           <RouterLink to="/gallery">
             <h3>GALLERY</h3>
           </RouterLink>
+        </li>
+        <li onClick={closeMenu}>
+          {isHomePage ? (
+            <ScrollLink to='merchandise-section' smooth={true} offset={-80} duration={500}>
+              <h3>MERCHANDISE</h3>
+            </ScrollLink>
+          ) : (
+            <RouterLink to="/merchandise">
+              <h3>MERCHANDISE</h3>
+            </RouterLink>
+          )}
         </li>
         <li onClick={closeMenu}>
           {isHomePage ? (

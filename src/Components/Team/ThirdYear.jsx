@@ -14,6 +14,7 @@ import srinivasImg from '../../assets/srinivas.jpeg';
 import sukanyaImg from '../../assets/sukanya.jpeg';
 import tharunImg from '../../assets/tharun.jpg';
 import vishalPalImg from '../../assets/vishalPal.jpeg';
+import gairikImg from '../../assets/gairik.jpg';
 
 const ThirdYear = () => {
   const members = [
@@ -121,6 +122,13 @@ const ThirdYear = () => {
       image: tharunImg,
       linkedin: '',
       instagram: 'https://www.instagram.com/mr_tharun_2603?igsh=MXI2dGx5NzMzbTVrMQ=='
+    },
+    {
+      name: 'Gairik Roy',
+      post: '',
+      image: gairikImg,
+      linkedin: 'https://www.linkedin.com/in/gairik-roy-59b524346/',
+      instagram: 'https://www.instagram.com/its_roy1257?utm_source=qr&igsh=MTVtZTFsYTBsdGV4dQ=='
     },
   ];
   return (

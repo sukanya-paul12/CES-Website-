@@ -4,6 +4,7 @@ import About from '../../About/About';
 import Title from '../../Title/Title';
 import Programs from '../../Programs/Programs';
 import Campus from '../../Campus/Campus';
+import Merchandise from '../../Merchandise/Merchandise';
 import Team from '../Team/Team';
 import Contact from '../../Contact/Contact';
 import VideoPlayer from '../../VideoPlayer/VideoPlayer';
@@ -15,7 +16,11 @@ const Home = ({ scrollTo }) => {
     if (scrollTo === 'team') {
       const el = document.getElementById('team-section');
       if (el) {
-        // slight delay to ensure layout ready
+        setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
+      }
+    } else if (scrollTo === 'merchandise') {
+      const el = document.getElementById('merchandise-section');
+      if (el) {
         setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
       }
     }
@@ -31,6 +36,11 @@ const Home = ({ scrollTo }) => {
         
         <Title subTitle='Gallery' title='Campus Photos' />
         <Campus />
+
+        <div id="merchandise-section">
+          <Merchandise />
+        </div>
+
         <div id="team-section">
           <Title subTitle='Meet the Team' title='Our Team' />
           <Team />

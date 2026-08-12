@@ -157,6 +157,75 @@
     transform: translateX(4px);
 }
 
+/* Hero Scroll Down Indicator */
+.hero-scroll-indicator {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    z-index: 5;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+    animation: fadeInUp 0.8s ease-out 0.8s both;
+}
+
+.hero-scroll-indicator:hover {
+    opacity: 1;
+}
+
+.scroll-mouse {
+    width: 24px;
+    height: 38px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 14px;
+    display: flex;
+    justify-content: center;
+    padding-top: 6px;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.15);
+    transition: border-color 0.3s ease;
+}
+
+.hero-scroll-indicator:hover .scroll-mouse {
+    border-color: #FFFFFF;
+    box-shadow: 0 0 18px rgba(255, 255, 255, 0.3);
+}
+
+.scroll-wheel {
+    width: 4px;
+    height: 8px;
+    background: #FFFFFF;
+    border-radius: 2px;
+    animation: scrollWheel 1.8s ease-in-out infinite;
+}
+
+.scroll-text {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.3s ease;
+}
+
+.hero-scroll-indicator:hover .scroll-text {
+    color: #FFFFFF;
+}
+
+@keyframes scrollWheel {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+}
+
 /* Floating elements */
 .floating-element {
     position: absolute;

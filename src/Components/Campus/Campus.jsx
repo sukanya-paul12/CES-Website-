@@ -6,6 +6,7 @@ import gallery_3 from '../../assets/gallery-3.png'
 import gallery_4 from '../../assets/gallery-4.png'
 import heroImg from '../../assets/hero.png'
 import aboutImg from '../../assets/about.png'
+import utkarshBhawan from '../../assets/utkarsh-bhawan.jpg'
 import white_arrow from '../../assets/white-arrow.png'
 
 const Campus = () => {
@@ -13,6 +14,7 @@ const Campus = () => {
   const [lightbox, setLightbox] = useState({ isOpen: false, imageIndex: 0 });
 
   const images = [
+    { src: utkarshBhawan, alt: 'Utkarsh Bhawan' },
     { src: heroImg, alt: 'NIT Durgapur Campus' },
     { src: gallery_2, alt: 'Campus View 2' },
     { src: gallery_3, alt: 'Campus View 3' },
