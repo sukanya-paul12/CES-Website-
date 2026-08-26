@@ -12,8 +12,16 @@ import nitdgpVideo from '../../../assets/nitdgp-video_gW7ApmeU.mp4';
 import expertTalks from '../../../assets/15AugExpertTalks.png';
 import intersection from '../../../assets/h1-2intersection.jpg';
 import freshers25team from '../../../assets/freshersteam25.jpeg';
+import freshers24team from '../../../assets/freshers24.jpeg';
+import freshers26team from '../../../assets/freshersteam26.jpg';
+import freshers26 from '../../../assets/freshers26.jpg';
 import utkarshBhawan from '../../../assets/utkarsh-bhawan.jpg';
 import farewell from '../../../assets/farewell.jpg';
+import trussTrekked from '../../../assets/truss-trekked.jpg';
+import expertTalksAsmit from '../../../assets/expert-talks-asmit.png';
+import civilLegacyAman from '../../../assets/civil-legacy-aman.jpg';
+import jamboreeAwareness from '../../../assets/jamboree-awareness.jpg';
+import freshersParty from '../../../assets/freshers-party.jpg';
 
 const Gallery = () => {
   const [activeTab, setActiveTab] = useState('all');
@@ -27,15 +35,22 @@ const Gallery = () => {
     { id: 5, type: 'image', src: intersection, title: 'Campus View 5', category: 'campus' },
     { id: 6, type: 'image', src: heroImg, title: 'NIT Durgapur', category: 'campus' },
     { id: 7, type: 'image', src: aboutImg, title: 'Campus Life', category: 'campus' },
-    { id: 8, type: 'image', src: freshers25team, title: '2025 Team', category: 'events' },
-    { id: 9, type: 'image', src: farewell, title: 'Farewell Ceremony', category: 'events' },
-    { id: 11, type: 'image', src: program1, title: 'Engineering Seminar', category: 'events' },
+    { id: 16, type: 'image', src: trussTrekked, title: 'Truss Trekked Competition', category: 'events' },
+    { id: 17, type: 'image', src: expertTalksAsmit, title: 'Expert Talks - Asmit Roy Burman', category: 'events' },
+    { id: 18, type: 'image', src: civilLegacyAman, title: 'Civil Legacy - Aman Deep Sandhu', category: 'events' },
+    { id: 19, type: 'image', src: jamboreeAwareness, title: 'GRE/GMAT Awareness Session', category: 'events' },
+    { id: 20, type: 'image', src: freshersParty, title: 'Freshers\' Party', category: 'events' },
     { id: 12, type: 'image', src: program2, title: 'Civil Engineering Event', category: 'events' },
+    { id: 22, type: 'image', src: freshers26, title: 'Freshers 2026', category: 'memories' },
+    { id: 21, type: 'image', src: freshers26team, title: '2026 Team', category: 'memories' },
+    { id: 8, type: 'image', src: freshers25team, title: '2025 Team', category: 'memories' },
+    { id: 10, type: 'image', src: freshers24team, title: '2024 Freshers Team', category: 'memories' },
+    { id: 9, type: 'image', src: farewell, title: 'Farewell Ceremony', category: 'memories' },
     { id: 13, type: 'video', src: collegeVideo, thumbnail: gallery2, title: 'Campus Tour', category: 'videos' },
     { id: 14, type: 'video', src: nitdgpVideo, thumbnail: gallery3, title: 'NIT Durgapur Overview', category: 'videos' },
   ];
 
-  const categories = ['all', 'campus', 'events', 'videos'];
+  const categories = ['all', 'campus', 'events', 'memories', 'videos'];
 
   const filteredItems = activeTab === 'all' 
     ? galleryItems 
