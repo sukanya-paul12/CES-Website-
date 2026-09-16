@@ -12,7 +12,7 @@ const FacultyAdvisor = () => {
       email: 'skonai.ce@nitdgp.ac.in'
     },
     { 
-      name: 'Dr. Sabyasachi Biswas', 
+      name: 'Sabyasachi Biswas', 
       post: 'Faculty Advisor', 
       image: sabyasachiImg,
       email: 'sbiswas.ce@nitdgp.ac.in'
