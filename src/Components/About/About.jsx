@@ -3,6 +3,7 @@ import './About.css'
 import about_img from '../../assets/about.png'
 import play_icon from '../../assets/play-icon.png'
 import droneShot from '../../assets/droneShots.mp4'
+import cesPoster from '../../assets/we-are-ces-poster.png'
 import "../../assets/hero.png"
 
 const About = ({setPlayState}) => {
@@ -58,6 +59,12 @@ const About = ({setPlayState}) => {
         <div className="video-wrapper">
           <img src={about_img} alt="" className='about-img'/>
           <img src={play_icon} alt="" className='play-icon' onClick={()=>{setPlayState(true)}}/>
+        </div>
+        <div className="drone-video-container">
+          <video className="drone-video" controls poster={cesPoster} preload="metadata">
+            <source src="/ces-video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
         <div className="youtube-video-container">
           <iframe 

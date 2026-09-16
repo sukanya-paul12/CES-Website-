@@ -1,14 +1,21 @@
 import React from 'react';
 import { MdOutlineEmail } from 'react-icons/md';
-import dipteshImg from '../../assets/diptesh.jpg';
+import sankuImg from '../../assets/sanku-konai.jpg';
+import sabyasachiImg from '../../assets/sabyasachi-biswas.jpg';
 
 const FacultyAdvisor = () => {
   const advisors = [
     { 
-      name: 'Dr. Diptesh Das', 
+      name: 'Dr. Sanku Konai', 
       post: 'Faculty Advisor', 
-      image: dipteshImg,
-      email: 'ddas.ce@nitdgp.ac.in'
+      image: sankuImg,
+      email: 'skonai.ce@nitdgp.ac.in'
+    },
+    { 
+      name: 'Dr. Sabyasachi Biswas', 
+      post: 'Faculty Advisor', 
+      image: sabyasachiImg,
+      email: 'sbiswas.ce@nitdgp.ac.in'
     },
   ];
   

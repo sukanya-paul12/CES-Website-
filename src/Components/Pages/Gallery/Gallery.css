@@ -287,8 +287,9 @@
 
 .lightbox-download {
   position: fixed;
-  bottom: 40px;
+  top: 30px;
   right: 40px;
+  bottom: auto;
   background: rgba(255, 255, 255, 0.95);
   border: none;
   color: #000000;

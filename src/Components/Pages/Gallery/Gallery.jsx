@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Gallery.css';
 import gallery2 from '../../../assets/gallery-2.png';
 import gallery3 from '../../../assets/gallery-3.png';
@@ -22,10 +22,12 @@ import expertTalksAsmit from '../../../assets/expert-talks-asmit.png';
 import civilLegacyAman from '../../../assets/civil-legacy-aman.jpg';
 import jamboreeAwareness from '../../../assets/jamboree-awareness.jpg';
 import freshersParty from '../../../assets/freshers-party.jpg';
+import cesPoster from '../../../assets/we-are-ces-poster.png';
 
 const Gallery = () => {
   const [activeTab, setActiveTab] = useState('all');
   const [lightbox, setLightbox] = useState({ isOpen: false, item: null });
+  const lightboxVideoRef = useRef(null);
 
   const galleryItems = [
     { id: 15, type: 'image', src: utkarshBhawan, title: 'Utkarsh Bhawan', category: 'campus' },
@@ -46,6 +48,7 @@ const Gallery = () => {
     { id: 8, type: 'image', src: freshers25team, title: '2025 Team', category: 'memories' },
     { id: 10, type: 'image', src: freshers24team, title: '2024 Freshers Team', category: 'memories' },
     { id: 9, type: 'image', src: farewell, title: 'Farewell Ceremony', category: 'memories' },
+    { id: 23, type: 'video', src: '/ces-video.mp4', thumbnail: cesPoster, title: 'WE ARE CES', category: 'videos' },
     { id: 13, type: 'video', src: collegeVideo, thumbnail: gallery2, title: 'Campus Tour', category: 'videos' },
     { id: 14, type: 'video', src: nitdgpVideo, thumbnail: gallery3, title: 'NIT Durgapur Overview', category: 'videos' },
   ];
@@ -88,6 +91,28 @@ const Gallery = () => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [lightbox.isOpen, lightbox.item]);
 
+  // Play unmuted when a video opens in the lightbox.
+  // Using useEffect (not autoPlay) so the browser treats it as
+  // user-gesture-triggered and lifts the mute restriction.
+  useEffect(() => {
+    if (lightbox.isOpen && lightbox.item?.type === 'video' && lightboxVideoRef.current) {
+      const vid = lightboxVideoRef.current;
+      vid.muted = false;
+      vid.volume = 1.0;
+      vid.play().catch((err) => {
+        // Fallback: if browser still blocks unmuted autoplay, at least start playing
+        console.warn('Unmuted autoplay blocked, retrying muted:', err);
+        vid.muted = true;
+        vid.play().catch(console.error);
+      });
+    }
+    // Pause & reset when lightbox closes
+    if (!lightbox.isOpen && lightboxVideoRef.current) {
+      lightboxVideoRef.current.pause();
+      lightboxVideoRef.current.currentTime = 0;
+    }
+  }, [lightbox]);
+
   return (
     <div className="gallery-page">
       <div className="gallery-hero">
@@ -115,7 +140,11 @@ const Gallery = () => {
                 <img src={item.src} alt={item.title} />
               ) : (
                 <div className="video-container" style={{ position: 'relative' }}>
-                  <video src={item.src} poster={item.thumbnail} />
+                  <video 
+                    src={item.src} 
+                    poster={item.thumbnail || undefined} 
+                    preload="metadata" 
+                  />
                   <span style={{
                     position: 'absolute',
                     top: 10,
@@ -151,7 +180,12 @@ const Gallery = () => {
             {lightbox.item.type === 'image' ? (
               <img src={lightbox.item.src} alt={lightbox.item.title} />
             ) : (
-              <video src={lightbox.item.src} controls autoPlay />
+              <video 
+                ref={lightboxVideoRef}
+                src={lightbox.item.src} 
+                controls
+                poster={lightbox.item.thumbnail || undefined}
+              />
             )}
             <h3 className="lightbox-title">{lightbox.item.title}</h3>
           </div>
