@@ -23,6 +23,9 @@ import civilLegacyAman from '../../../assets/civil-legacy-aman.jpg';
 import jamboreeAwareness from '../../../assets/jamboree-awareness.jpg';
 import freshersParty from '../../../assets/freshers-party.jpg';
 import cesPoster from '../../../assets/we-are-ces-poster.png';
+import expertTalksSouvik from '../../../assets/expert-talks-souvik.png';
+import cesAuditions from '../../../assets/ces-auditions.jpg';
+import surveyingEquipment from '../../../assets/surveying-equipment.jpg';
 
 const Gallery = () => {
   const [activeTab, setActiveTab] = useState('all');
@@ -37,6 +40,9 @@ const Gallery = () => {
     { id: 5, type: 'image', src: intersection, title: 'Campus View 5', category: 'campus' },
     { id: 6, type: 'image', src: heroImg, title: 'NIT Durgapur', category: 'campus' },
     { id: 7, type: 'image', src: aboutImg, title: 'Campus Life', category: 'campus' },
+    { id: 26, type: 'image', src: cesAuditions, title: 'CES Auditions', category: 'events' },
+    { id: 24, type: 'image', src: expertTalksSouvik, title: 'Expert Talks - Prof. Souvik Das', category: 'events' },
+    { id: 25, type: 'image', src: surveyingEquipment, title: 'Surveying Equipment Live Demonstration', category: 'events' },
     { id: 16, type: 'image', src: trussTrekked, title: 'Truss Trekked Competition', category: 'events' },
     { id: 17, type: 'image', src: expertTalksAsmit, title: 'Expert Talks - Asmit Roy Burman', category: 'events' },
     { id: 18, type: 'image', src: civilLegacyAman, title: 'Civil Legacy - Aman Deep Sandhu', category: 'events' },
