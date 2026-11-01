@@ -16,18 +16,15 @@ const VideoPlayer = ({playState, setPlayState}) => {
     }
 
     useEffect(() => {
-      if (playState && videoRef.current) {
-        videoRef.current.currentTime = 0;
-        videoRef.current.muted = false;
-        videoRef.current.play().catch(err => console.log('Autoplay play error:', err));
-      } else if (!playState && videoRef.current) {
+      if (!playState && videoRef.current) {
         videoRef.current.pause();
+        videoRef.current.currentTime = 0;
       }
     }, [playState]);
 
   return (
     <div className={`video-player ${playState?'':'hide'}`} ref={player} onClick={closePlayer}>
-      <video ref={videoRef} src="/ces-video.mp4" controls preload="auto"></video>
+      <video ref={videoRef} src="/ces-video.mp4" controls preload="auto" playsInline onLoadedMetadata={(e) => { e.currentTarget.muted = false; e.currentTarget.volume = 1.0; }}></video>
     </div>
   )
 }

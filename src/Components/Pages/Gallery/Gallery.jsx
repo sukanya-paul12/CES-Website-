@@ -97,27 +97,13 @@ const Gallery = () => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [lightbox.isOpen, lightbox.item]);
 
-  // Play unmuted when a video opens in the lightbox.
-  // Using useEffect (not autoPlay) so the browser treats it as
-  // user-gesture-triggered and lifts the mute restriction.
+  // Pause & reset video when lightbox closes
   useEffect(() => {
-    if (lightbox.isOpen && lightbox.item?.type === 'video' && lightboxVideoRef.current) {
-      const vid = lightboxVideoRef.current;
-      vid.muted = false;
-      vid.volume = 1.0;
-      vid.play().catch((err) => {
-        // Fallback: if browser still blocks unmuted autoplay, at least start playing
-        console.warn('Unmuted autoplay blocked, retrying muted:', err);
-        vid.muted = true;
-        vid.play().catch(console.error);
-      });
-    }
-    // Pause & reset when lightbox closes
     if (!lightbox.isOpen && lightboxVideoRef.current) {
       lightboxVideoRef.current.pause();
       lightboxVideoRef.current.currentTime = 0;
     }
-  }, [lightbox]);
+  }, [lightbox.isOpen]);
 
   return (
     <div className="gallery-page">
@@ -186,10 +172,16 @@ const Gallery = () => {
             {lightbox.item.type === 'image' ? (
               <img src={lightbox.item.src} alt={lightbox.item.title} />
             ) : (
-              <video 
+              <video
                 ref={lightboxVideoRef}
-                src={lightbox.item.src} 
+                src={lightbox.item.src}
                 controls
+                preload="auto"
+                playsInline
+                onLoadedMetadata={(e) => {
+                  e.currentTarget.muted = false;
+                  e.currentTarget.volume = 1.0;
+                }}
                 poster={lightbox.item.thumbnail || undefined}
               />
             )}
